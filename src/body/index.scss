@@ -27,7 +27,7 @@
       }
     }
 
-    @media (width > $breakpoint-large) {
+    @media (width > $breakpoint-middle) {
       height: 18.75rem; // Image height
 
       > .xlog-post-cover {
@@ -68,9 +68,11 @@
       }
     }
 
-    @media (width <= $breakpoint-large) {
+    @media (width <= $breakpoint-middle) {
       flex-direction: column-reverse;
       > .xlog-post-cover {
+        width: 100%;
+        height: 10rem;
         > span, img {
           border-bottom-left-radius: 0;
           border-bottom-right-radius: 0;
