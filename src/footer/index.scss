@@ -1,8 +1,12 @@
-footer > div > p::before {
-  content: "Theme Sakura 🌸 by Nya Candy";
-  color: #b9b9b9;
-  font-size: 13px;
-  display: block;
-  text-align: center;
-  margin-bottom: 20px;
+footer {
+  background-image: linear-gradient(to bottom , rgba(0, 0, 0, 0), var(--theme-color-dim));
+
+  > div > p::before {
+    content: "Theme Sakura 🌸 by Nya Candy";
+    color: #b9b9b9;
+    font-size: 13px;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 }
