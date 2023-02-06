@@ -1,0 +1,104 @@
+@import "../utils/glitch";
+@import "../config";
+
+.xlog-header {
+
+  position: sticky;
+  height: 300px;
+  top: -260px; // nav height (40px) - header height
+  z-index: 1;
+  border: none;
+
+  background-color: var(--theme-color-dim);
+
+  @media (width > $breakpoint-large) {
+    height: 100vh;
+    top: calc(40px - 100vh);
+  }
+
+  .xlog-banner {
+    height: calc(100% - 40px);
+
+    img[alt="banner"] {
+      width: 100%;
+      max-width: unset;
+      filter: blur(8px) brightness(60%);
+    }
+  }
+
+  .xlog-site-info {
+    justify-content: center;
+
+    > span {
+      // Style 1: Hide Avatar
+      display: none;
+    }
+
+    & > div {
+      margin: 0!important;
+
+      .xlog-site-name {
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+
+        @extend %glitch-inactive;
+        &:hover {
+          @extend %glitch-active;
+        }
+      }
+
+      .xlog-site-description {
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        background-color: rgba(0,0,0,.5);
+        color: white;
+      }
+
+      .xlog-site-others {
+        text-align: center;
+        > * {
+          color: white;
+        }
+
+        .xlog-site-followers, .xlog-site-followings {
+          > span {
+            color: var(--theme-color-light);
+            transition: color .2s;
+          }
+
+          &:hover > span {
+            color: var(--theme-color-dim);
+          }
+        }
+
+        button[aria-label="follow"] {
+          color: var(--theme-color-light);
+          transition: color .2s;
+
+          &:hover {
+            color: var(--theme-color-dim);
+          }
+        }
+      }
+
+      @media (width < $breakpoint-small) {
+        .xlog-site-description {
+          display: none;
+        }
+      }
+
+      @media (width > $breakpoint-large) {
+        .xlog-site-name {
+          font-size: 80px;
+          line-height: 120px;
+        }
+
+        .xlog-site-description {
+          padding: 2rem 6rem;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

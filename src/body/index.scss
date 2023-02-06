@@ -1,0 +1,94 @@
+@import "../config";
+
+.xlog-posts {
+  .xlog-post {
+    border-radius: 12px;
+    box-shadow: 0 1px 20px -8px rgb(0 0 0 / 50%);
+    padding: 0;
+    margin: 1.75rem 1.25rem;
+
+    .xlog-post-title {
+      transition: color .2s;
+    }
+
+    > :not(.xlog-post-cover) {
+      padding: 1.75rem;
+      gap: .5rem;
+    }
+
+    > .xlog-post-cover {
+      margin: 0;
+      padding: 0;
+      > span {
+        border-radius: 12px;
+        img {
+          transition: all .5s;
+        }
+      }
+    }
+
+    @media (width > $breakpoint-large) {
+      height: 18.75rem; // Image height
+
+      > .xlog-post-cover {
+        height: 100%;
+        width: 50%;
+      }
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+        > .xlog-post-cover {
+          margin-left: 0;
+          margin-right: 1rem;
+          > span, img {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+        }
+
+        &:hover .xlog-post-cover img {
+          transform: scale(1.1) rotate(-2deg);
+        }
+      }
+
+      &:nth-child(odd) {
+        flex-direction: row;
+        > .xlog-post-cover {
+          margin-left: 1rem;
+          margin-right: 0;
+          > span, img {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+        }
+
+        &:hover .xlog-post-cover img {
+          transform: scale(1.1) rotate(2deg);
+        }
+      }
+    }
+
+    @media (width <= $breakpoint-large) {
+      flex-direction: column-reverse;
+      > .xlog-post-cover {
+        > span, img {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      }
+    }
+
+    &:hover {
+      .xlog-post-title {
+        color: var(--theme-color);
+      }
+    }
+  }
+}
+
+button[aria-label="load more"] {
+  padding: 24px 0!important;
+  border: 1px solid var(--theme-color-light);
+  color: var(--theme-color-dark);
+  border-radius: 48px;
+}

@@ -1,0 +1,23 @@
+/**
+  Theme Sakura for xLog by Nya Candy
+  All rights reserved.
+ */
+
+@import "./header/index";
+@import "./body/index";
+@import "./footer/index";
+
+:root {
+  --theme-color: #f43f5e;
+  --theme-color-dim: #fff1f2;
+  --theme-color-light: #fecdd3;
+  --theme-color-dark: #be123c;
+
+  --hover-color: var(--theme-color-dim);
+}
+
+body {
+  background-image: url("https://cf-ipfs.com/ipfs/bafkreiglba6efsoz4wszqobweeprtunbp46uw2fikecc4p7dbh7ohnsexa");
+  background-size: 30rem;
+  background-attachment: fixed;
+}
