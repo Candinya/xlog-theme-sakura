@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node build.js",
     "deploy": "node deploy.js",
-    "buildanddeploy": "npm build && npm run deploy",
+    "buildanddeploy": "npm run build && npm run deploy",
     "watch": "nodemon -e scss --watch src build.js",
     "prepare": "husky install"
   },
