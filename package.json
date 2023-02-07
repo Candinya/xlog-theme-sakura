@@ -6,8 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp build",
+    "deploy": "node deploy.js",
+    "buildanddeploy": "npm build && npm run deploy",
     "dev": "gulp watch"
   },
+  "type": "module",
   "keywords": [
     "xlog",
     "theme",
@@ -21,6 +24,7 @@
     "gulp-cli": "^2.3.0",
     "gulp-dart-sass": "^1.0.2",
     "gulp-postcss": "^9.0.1",
+    "node-fetch": "^3.3.0",
     "postcss": "^8.4.21",
     "sass": "^1.58.0"
   }
