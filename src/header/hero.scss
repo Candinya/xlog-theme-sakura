@@ -2,6 +2,7 @@
 @import "../config";
 
 // TODO: Limit in homepage only
+// In homepage:
 .xlog-header {
 
   position: sticky;
@@ -100,6 +101,17 @@
           font-weight: 700;
         }
       }
+    }
+  }
+}
+
+// In non-home pages:
+.xlog-header {
+  top: 0;
+  height: 40px; // Navbar
+  > div {
+    > div:not(:last-child) {
+      display: none;
     }
   }
 }
