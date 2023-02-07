@@ -4,7 +4,6 @@
 // TODO: Limit in homepage only
 // In homepage:
 .xlog-header {
-
   position: sticky;
   height: 300px;
   top: -260px; // nav height (40px) - header height
@@ -37,7 +36,7 @@
     }
 
     & > div {
-      margin: 0!important;
+      margin: 0 !important;
 
       .xlog-site-name {
         font-weight: 700;
@@ -53,7 +52,7 @@
       .xlog-site-description {
         padding: 1rem 2rem;
         border-radius: 12px;
-        background-color: rgba(0,0,0,.5);
+        background-color: rgba(0, 0, 0, 0.5);
         color: white;
       }
 
@@ -63,10 +62,11 @@
           color: white;
         }
 
-        .xlog-site-followers, .xlog-site-followings {
+        .xlog-site-followers,
+        .xlog-site-followings {
           > span {
             color: var(--theme-color-light);
-            transition: color .2s;
+            transition: color 0.2s;
           }
 
           &:hover > span {
@@ -76,7 +76,7 @@
 
         button[aria-label="follow"] {
           color: var(--theme-color-light);
-          transition: color .2s;
+          transition: color 0.2s;
 
           &:hover {
             color: var(--theme-color-dim);

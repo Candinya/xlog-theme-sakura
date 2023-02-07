@@ -6,3 +6,5 @@ test_*.html
 _next/
 
 dist/
+
+pnpm-lock.yaml
