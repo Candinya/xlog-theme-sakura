@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Code");
+
 div.code-wrapper > pre {
   padding-top: 32px;
 
@@ -12,4 +14,8 @@ div.code-wrapper > pre {
     top: 10px;
     box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
   }
+}
+
+code {
+  font-family: "Fira Code", "Roboto Mono", Monaco, monospace !important;
 }
