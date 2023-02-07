@@ -1,5 +1,5 @@
-@import "../utils/glitch";
 @import "../utils/breakpoints";
+@import "../config";
 
 $height-navbar: 40px;
 $height-header-normal: 360px;
@@ -27,7 +27,6 @@ $height-header-normal: 360px;
     justify-content: center;
 
     > span {
-      // Style 1: Hide Avatar
       display: none;
     }
 
@@ -39,10 +38,7 @@ $height-header-normal: 360px;
         text-align: center;
         text-transform: uppercase;
 
-        @extend %glitch-inactive;
-        &:hover {
-          @extend %glitch-active;
-        }
+        color: white;
       }
 
       .xlog-site-description {
@@ -95,22 +91,72 @@ $height-header-normal: 360px;
   }
 }
 
-// TODO: Limit in homepage only
-@media (width > $breakpoint-large) {
-  .xlog-header {
-    height: 100vh;
-    top: calc($height-navbar - 100vh);
-  }
+$before-color: #5bd0fa;
+$after-color: #f5acba;
+$glitch-offset: 0.2rem;
+$avatar-base-size: 12rem;
 
-  .xlog-site-info {
-    .xlog-site-name {
-      font-size: 80px;
-      line-height: 120px;
+.xlog-page-index {
+  @media (width > $breakpoint-large) {
+    .xlog-header {
+      height: 100vh;
+      top: calc($height-navbar - 100vh);
     }
 
-    .xlog-site-description {
-      padding: 2rem 6rem;
-      font-weight: 700;
+    .xlog-site-info {
+      display: flex;
+      flex-direction: column;
+
+      > span {
+        display: flex;
+        width: $avatar-base-size !important;
+        height: $avatar-base-size !important;
+        margin-bottom: 2rem;
+        outline: 0.2rem dashed var(--theme-color-light);
+        outline-offset: 0.3rem;
+        transition: scale 0.3s;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        &:hover {
+          scale: (1.1);
+        }
+      }
+
+      .xlog-site-name {
+        font-size: 4rem;
+
+        position: relative;
+
+        &::before,
+        &::after {
+          //content: contents; // Not implemented, see https://drafts.csswg.org/css-content-3/
+          content: $site-name; // TODO: find a better method (like specify attr?)
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          text-shadow: 0;
+          transition: text-shadow 0.3s;
+        }
+
+        &:hover {
+          &::before {
+            text-shadow: -$glitch-offset 0 $before-color;
+          }
+          &::after {
+            text-shadow: $glitch-offset 0 $after-color;
+          }
+        }
+      }
+
+      .xlog-site-description {
+        padding: 2rem 6rem;
+        font-weight: 700;
+      }
     }
   }
 }

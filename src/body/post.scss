@@ -1,7 +1,7 @@
 @import "../utils/breakpoints";
 @import "../utils/block";
 
-div[class^="xlog-post-id-"]:not(.xlog-post-id-undefined) {
+.xlog-page-post div[class^="xlog-post-id-"] {
   .xlog-post-content {
     background-color: rgba(white, 0.8);
     padding: 1.75rem;
