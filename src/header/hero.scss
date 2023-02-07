@@ -108,7 +108,9 @@
 // In non-home pages:
 .xlog-header {
   top: 0;
-  height: 40px; // Navbar
+  height: var(
+    --header-height
+  ); // Actually no need after limiting hero in homepage only
   > div {
     > div:not(:last-child) {
       display: none;
