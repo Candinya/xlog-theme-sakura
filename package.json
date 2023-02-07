@@ -7,7 +7,8 @@
     "build": "node build.js",
     "deploy": "node deploy.js",
     "buildanddeploy": "npm build && npm run deploy",
-    "watch": "nodemon -e scss --watch src build.js"
+    "watch": "nodemon -e scss --watch src build.js",
+    "prepare": "husky install"
   },
   "type": "module",
   "keywords": [
@@ -21,9 +22,15 @@
     "cssnano": "^5.1.14",
     "esbuild": "^0.17.6",
     "esbuild-plugin-sass": "^1.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
     "node-fetch": "^3.3.0",
     "nodemon": "^2.0.20",
     "postcss": "^8.4.21",
+    "prettier": "2.8.3",
     "sass": "^1.58.0"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
