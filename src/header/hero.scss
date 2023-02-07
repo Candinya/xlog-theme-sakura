@@ -86,7 +86,7 @@ $height-header-normal: 360px;
   .xlog-site-navigation + div {
     padding: 0 1rem;
     border: var(--theme-color-light) 1px solid;
-    border-radius: $height-navbar / 2;
+    border-radius: calc($height-navbar / 2);
     transition: background-color 0.2s;
 
     &:hover {
