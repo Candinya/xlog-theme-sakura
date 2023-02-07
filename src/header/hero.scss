@@ -83,7 +83,7 @@ $height-header-normal: 360px;
   }
 
   // Connect button
-  .xlog-site-navigation + div {
+  .xlog-site-navigation + div button {
     padding: 0 1rem;
     border: var(--theme-color-light) 1px solid;
     border-radius: calc($height-navbar / 2);
