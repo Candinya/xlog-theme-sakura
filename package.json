@@ -4,11 +4,10 @@
   "description": "Theme sakura for xLog",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp build",
+    "build": "node build.js",
     "deploy": "node deploy.js",
     "buildanddeploy": "npm build && npm run deploy",
-    "dev": "gulp watch"
+    "watch": "nodemon -e scss --watch src build.js"
   },
   "type": "module",
   "keywords": [
@@ -20,11 +19,10 @@
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.14",
-    "gulp": "^4.0.2",
-    "gulp-cli": "^2.3.0",
-    "gulp-dart-sass": "^1.0.2",
-    "gulp-postcss": "^9.0.1",
+    "esbuild": "^0.17.6",
+    "esbuild-plugin-sass": "^1.0.1",
     "node-fetch": "^3.3.0",
+    "nodemon": "^2.0.20",
     "postcss": "^8.4.21",
     "sass": "^1.58.0"
   }
