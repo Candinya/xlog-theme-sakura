@@ -1,9 +1,10 @@
 @import "../config";
+@import "../utils/block";
 
+// Index
 .xlog-posts {
   .xlog-post {
-    border-radius: 12px;
-    box-shadow: 0 1px 20px -8px rgb(0 0 0 / 50%);
+    @extend %block;
     padding: 0;
     margin: 1.75rem 1.25rem;
 
@@ -93,4 +94,31 @@ button[aria-label="load more"] {
   border: 1px solid var(--theme-color-light);
   color: var(--theme-color-dark);
   border-radius: 48px;
+}
+
+// Post
+div[class^="xlog-post-id-"]:not(.xlog-post-id-undefined) {
+  .xlog-post-content {
+    background-color: rgba(white, .8);
+    padding: 1.75rem;
+    @extend %block;
+  }
+
+  .xlog-comment {
+    @extend .xlog-post-content;
+
+    textarea {
+      background: url(https://cf-ipfs.com/ipfs/bafkreiasu4z44njd7wq62vvleo6inpjcaerws4zqrcv6x452znn5bs2j3m) 100% 100% no-repeat;
+    }
+  }
+}
+
+// Archive
+// TODO: Limit in archive page only
+.xlog-post-id-undefined {
+  > div {
+    background-color: rgba(white, .8);
+    padding: 1.75rem;
+    @extend %block;
+  }
 }
