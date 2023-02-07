@@ -1,0 +1,28 @@
+@import "../utils/block";
+// TODO: Limit in archive page only
+.xlog-post-id-undefined {
+  > h2 ~ div {
+    background-color: rgba(white, 0.8);
+    padding: 1.75rem;
+    @extend %block;
+  }
+
+  > div > div > a[href^="/tag/"] {
+    border: 1px solid var(--theme-color-light);
+    box-shadow: 0 1px 4px rgb(0 0 0 / 10%);
+    border-radius: 16px;
+    display: inline-block;
+    margin: 4px;
+    padding: 2px 12px;
+    transition: background-color 0.2s;
+
+    &::before {
+      content: "# ";
+      color: var(--theme-color);
+    }
+
+    &:hover {
+      background-color: var(--theme-color-dim);
+    }
+  }
+}

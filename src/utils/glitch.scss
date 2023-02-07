@@ -1,3 +1,5 @@
+@import "../config";
+
 @keyframes glitch-loop-1 {
   0% {
     clip: rect(36px, 9999px, 9px, 0);
@@ -47,8 +49,6 @@ $base-color: #fff;
 $before-color: #ff3f1a;
 $after-color: #00a7e0;
 
-$content-text: "Nya Candy";
-
 %glitch-inactive {
   position: relative;
   color: $base-color;
@@ -57,7 +57,7 @@ $content-text: "Nya Candy";
   &::before,
   &::after {
     //content: contents; // Not implemented, see https://drafts.csswg.org/css-content-3/
-    content: $content-text; // TODO: find a better method (like specify attr?)
+    content: $site-name; // TODO: find a better method (like specify attr?)
     position: absolute;
     top: 0;
     width: 100%;

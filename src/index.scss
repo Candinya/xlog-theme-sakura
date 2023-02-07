@@ -3,9 +3,9 @@
   All rights reserved.
  */
 
-@import "./header/index";
-@import "./body/index";
-@import "./footer/index";
+@import "header";
+@import "body";
+@import "footer";
 
 :root {
   --theme-color: #f43f5e;

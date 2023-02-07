@@ -1,24 +1,20 @@
 @import "../utils/glitch";
-@import "../config";
+@import "../utils/breakpoints";
 
-// TODO: Limit in homepage only
-// In homepage:
+$height-navbar: 40px;
+$height-header-normal: 360px;
+
 .xlog-header {
   position: sticky;
-  height: 300px;
-  top: -260px; // nav height (40px) - header height
+  height: $height-header-normal;
+  top: $height-navbar - $height-header-normal; // nav height (40px) - header height
   z-index: 1;
   border: none;
 
   background-color: var(--theme-color-dim);
 
-  @media (width > $breakpoint-large) {
-    height: 100vh;
-    top: calc(40px - 100vh);
-  }
-
   .xlog-banner {
-    height: calc(100% - 40px);
+    height: calc(100% - $height-navbar);
 
     img[alt="banner"] {
       width: 100%;
@@ -83,37 +79,38 @@
           }
         }
       }
+    }
+  }
 
-      @media (width < $breakpoint-small) {
-        .xlog-site-description {
-          display: none;
-        }
-      }
+  // Connect button
+  .xlog-site-navigation + div {
+    padding: 0 1rem;
+    border: var(--theme-color-light) 1px solid;
+    border-radius: $height-navbar / 2;
+    transition: background-color 0.2s;
 
-      @media (width > $breakpoint-large) {
-        .xlog-site-name {
-          font-size: 80px;
-          line-height: 120px;
-        }
-
-        .xlog-site-description {
-          padding: 2rem 6rem;
-          font-weight: 700;
-        }
-      }
+    &:hover {
+      background-color: var(--theme-color-light);
     }
   }
 }
 
-// In non-home pages:
-.xlog-header {
-  top: 0;
-  height: var(
-    --header-height
-  ); // Actually no need after limiting hero in homepage only
-  > div {
-    > div:not(:last-child) {
-      display: none;
+// TODO: Limit in homepage only
+@media (width > $breakpoint-large) {
+  .xlog-header {
+    height: 100vh;
+    top: calc($height-navbar - 100vh);
+  }
+
+  .xlog-site-info {
+    .xlog-site-name {
+      font-size: 80px;
+      line-height: 120px;
+    }
+
+    .xlog-site-description {
+      padding: 2rem 6rem;
+      font-weight: 700;
     }
   }
 }

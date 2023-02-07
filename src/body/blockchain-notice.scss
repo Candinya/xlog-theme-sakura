@@ -1,0 +1,9 @@
+@import "../utils/block";
+
+div[class^="xlog-post-id-"] + div > div {
+  background-color: rgba(white, 0.8);
+  padding: 1.75rem;
+  @extend %block;
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
