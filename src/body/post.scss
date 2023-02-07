@@ -1,7 +1,7 @@
 @import "../utils/breakpoints";
 @import "../utils/block";
 
-.xlog-page-post div[class^="xlog-post-id-"] {
+.xlog-page-post {
   .xlog-post-content {
     background-color: rgba(white, 0.8);
     padding: 1.75rem;
@@ -34,10 +34,18 @@
 
   .xlog-comment {
     @extend .xlog-post-content;
-
-    textarea {
-      background: url(https://cf-ipfs.com/ipfs/bafkreiasu4z44njd7wq62vvleo6inpjcaerws4zqrcv6x452znn5bs2j3m)
-        100% 100% no-repeat;
-    }
   }
+}
+
+$comment-background-image-webp: url("https://cf-ipfs.com/ipfs/bafkreielb2nkt6urqegys6ojfekknmgbjnna3265n2dp3auwmbchbwfuge");
+$comment-background-image-png: url("https://cf-ipfs.com/ipfs/bafkreiasu4z44njd7wq62vvleo6inpjcaerws4zqrcv6x452znn5bs2j3m");
+
+.xlog-comment-input textarea {
+  @supports (background-image: $comment-background-image-webp) {
+    background-image: $comment-background-image-webp;
+  }
+  background-image: $comment-background-image-png;
+
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
 }

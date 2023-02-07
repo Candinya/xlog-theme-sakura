@@ -16,8 +16,13 @@
   --hover-color: var(--theme-color-dim);
 }
 
+$page-background-image-webp: url("https://cf-ipfs.com/ipfs/bafkreicczac6dsz5gkb7566ctnaucfmtwgblx3wposkz7esad76qt2magm");
+$page-background-image-png: url("https://cf-ipfs.com/ipfs/bafkreieh4s4y3c6vcfa5pu6a6ihyequdb4o7gm65c47vfgomyka5vgmq2i");
+
 body {
-  background-image: url("https://cf-ipfs.com/ipfs/bafkreiglba6efsoz4wszqobweeprtunbp46uw2fikecc4p7dbh7ohnsexa");
-  background-size: 30rem;
+  @supports (background-image: $page-background-image-webp) {
+    background-image: $page-background-image-webp;
+  }
+  background-image: $page-background-image-png;
   background-attachment: fixed;
 }
