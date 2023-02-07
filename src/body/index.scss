@@ -104,6 +104,16 @@ div[class^="xlog-post-id-"]:not(.xlog-post-id-undefined) {
     @extend %block;
   }
 
+  .xlog-reactions {
+    background-color: rgba(white, .8);
+    padding: 1.75rem;
+    @extend %block;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+
+    justify-content: space-around;
+  }
+
   .xlog-comment {
     @extend .xlog-post-content;
 
