@@ -57,7 +57,7 @@ $content-text: "Nya Candy";
   &::before,
   &::after {
     //content: contents; // Not implemented, see https://drafts.csswg.org/css-content-3/
-    content: $content-text; // TODO: find a better method
+    content: $content-text; // TODO: find a better method (like specify attr?)
     position: absolute;
     top: 0;
     width: 100%;
