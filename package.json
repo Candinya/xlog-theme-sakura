@@ -5,8 +5,6 @@
   "main": "index.js",
   "scripts": {
     "build": "node scripts/build.js",
-    "deploy": "node scripts/deploy.js",
-    "buildanddeploy": "npm run build && npm run deploy",
     "watch": "nodemon -e scss --watch src scripts/build.js",
     "prepare": "husky install"
   },
