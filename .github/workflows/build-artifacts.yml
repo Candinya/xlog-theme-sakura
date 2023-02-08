@@ -1,0 +1,68 @@
+name: Build artifacts
+
+on:
+  push:
+    branches: [master, develop]
+    tags:
+      - "v*"
+  pull_request:
+    branches: [master, develop]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Prepare NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        id: pnpm-install
+        with:
+          version: latest
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Checkout codes
+        uses: actions/checkout@v3
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+
+      - name: Build css
+        run: pnpm run build
+
+      - name: Create release draft
+        if: startsWith(github.event.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Sakura 🌸 ${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}
+          generate_release_notes: true
+          files: |
+            dist/index.css
+        env:
+          GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
+
+      - name: Upload built file as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: index.css
+          path: dist/index.css
