@@ -20,7 +20,6 @@
     "esbuild-plugin-sass": "^1.0.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
-    "node-fetch": "^3.3.0",
     "nodemon": "^2.0.20",
     "postcss": "^8.4.21",
     "prettier": "2.8.3",
