@@ -6,6 +6,7 @@ const options = {
   bundle: true,
   minify: true,
   outdir: "dist",
+  external: ["ipfs://*"],
   plugins: [sassPlugin()],
 };
 

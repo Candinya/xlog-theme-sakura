@@ -1,5 +1,6 @@
 @import "../utils/breakpoints";
 @import "../utils/block";
+@import "../config";
 
 .xlog-page-post {
   .xlog-post-content {
@@ -37,8 +38,8 @@
   }
 }
 
-$comment-background-image-webp: url("https://cf-ipfs.com/ipfs/bafkreielb2nkt6urqegys6ojfekknmgbjnna3265n2dp3auwmbchbwfuge");
-$comment-background-image-png: url("https://cf-ipfs.com/ipfs/bafkreiasu4z44njd7wq62vvleo6inpjcaerws4zqrcv6x452znn5bs2j3m");
+$comment-background-image-webp: url("#{$ipfs-prefix}bafkreielb2nkt6urqegys6ojfekknmgbjnna3265n2dp3auwmbchbwfuge");
+$comment-background-image-png: url("#{$ipfs-prefix}bafkreiasu4z44njd7wq62vvleo6inpjcaerws4zqrcv6x452znn5bs2j3m");
 
 .xlog-comment-input textarea {
   @supports (background-image: $comment-background-image-webp) {
