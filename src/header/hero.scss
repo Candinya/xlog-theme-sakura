@@ -78,17 +78,17 @@ $height-header-normal: 360px;
     }
   }
 
-  // Connect button
-  .xlog-site-navigation + div button {
-    padding: 0 1rem;
-    border: var(--theme-color-light) 1px solid;
-    border-radius: calc($height-navbar / 2);
-    transition: background-color 0.2s;
-
-    &:hover {
-      background-color: var(--theme-color-light);
-    }
-  }
+  //// Connect button
+  //.xlog-site-navigation + div button {
+  //  padding: 0 1rem;
+  //  border: var(--theme-color-light) 1px solid;
+  //  border-radius: calc($height-navbar / 2);
+  //  transition: background-color 0.2s;
+  //
+  //  &:hover {
+  //    background-color: var(--theme-color-light);
+  //  }
+  //}
 }
 
 $before-color: #5bd0fa;
