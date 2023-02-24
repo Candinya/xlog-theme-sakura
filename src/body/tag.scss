@@ -1,0 +1,9 @@
+@import "../utils/block";
+
+.xlog-page-tag {
+  h2 ~ div {
+    background-color: rgba(white, 0.8);
+    padding: 1.75rem;
+    @extend %block;
+  }
+}
