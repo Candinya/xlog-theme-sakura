@@ -8,17 +8,15 @@ footer {
   );
   padding-top: 2rem;
 
-  > div {
-    > p {
-      //color: #b9b9b9;
-      text-align: center;
-      font-size: 13px !important;
-      &::before {
-        content: "Theme Sakura 🌸 by Nya Candy";
-        display: block;
-        margin-bottom: 20px;
-        @extend p;
-      }
-    }
+  &::before {
+    content: "Theme Sakura 🌸 by Nya Candy";
+    display: block;
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 13px !important;
+  }
+
+  > div:first-child {
+    padding-top: 0.5rem;
   }
 }
