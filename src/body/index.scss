@@ -1,6 +1,20 @@
 @import "home";
 @import "post";
 @import "archive";
-@import "tag";
+@import "nft";
 @import "blockchain-notice";
 @import "highlight";
+
+@import "../utils/block";
+
+// Common page layout
+
+.xlog-page-archive,
+.xlog-page-tag,
+.xlog-page-nft {
+  h2 ~ div {
+    background-color: rgba(white, 0.8);
+    padding: 1.75rem;
+    @extend %block;
+  }
+}

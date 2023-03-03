@@ -1,0 +1,12 @@
+.xlog-page-nft {
+  .xlog-nft {
+    padding: 0.8rem;
+    border-radius: 12px;
+
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: var(--theme-color-dim);
+    }
+  }
+}
