@@ -84,6 +84,8 @@
     }
 
     &:hover {
+      background-color: var(--hover-color);
+
       .xlog-post-title {
         color: var(--theme-color);
       }

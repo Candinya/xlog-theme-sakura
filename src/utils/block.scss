@@ -1,4 +1,5 @@
 %block {
-  box-shadow: 0 1px 20px -8px rgb(0 0 0 / 50%);
+  background-color: var(--block-background-color);
+  box-shadow: 0 1px 20px -8px var(--block-box-shadow);
   border-radius: 12px;
 }

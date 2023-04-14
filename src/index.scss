@@ -13,7 +13,25 @@
   --theme-color-light: #fecdd3;
   --theme-color-dark: #be123c;
 
+  --block-background-color: #ffffffcc;
+  --block-box-shadow: #0000007f;
+
   --hover-color: var(--theme-color-dim);
+}
+
+/* Color palette for dark mode */
+html.dark {
+  --theme-color: #f43f5e;
+  --theme-color-dim: #3c495bcc;
+  --theme-color-light: #282c34dd;
+  --theme-color-dark: #be123c;
+
+  --block-background-color: #282c34dd;
+  --block-box-shadow: #ffffff7f;
+
+  body {
+    background-color: #181c27;
+  }
 }
 
 $page-background-image-webp: url("#{$ipfs-prefix}bafkreicczac6dsz5gkb7566ctnaucfmtwgblx3wposkz7esad76qt2magm");
