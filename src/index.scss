@@ -34,8 +34,8 @@ html.dark {
   }
 }
 
-$page-background-image-webp: url("#{$ipfs-prefix}bafkreicczac6dsz5gkb7566ctnaucfmtwgblx3wposkz7esad76qt2magm");
-$page-background-image-png: url("#{$ipfs-prefix}bafkreieh4s4y3c6vcfa5pu6a6ihyequdb4o7gm65c47vfgomyka5vgmq2i");
+$page-background-image-webp: url("#{$ipfs-prefix}bafkreigmilaklouywaqdjx6suo4rwg7lujudvifanjmlujmnzln72qz3re");
+$page-background-image-png: url("#{$ipfs-prefix}bafkreic4ys3hhl4rc6lrdzhyecv35iq53p4iwbwof2dsafssgp3aptfgt4");
 
 body {
   @supports (background-image: $page-background-image-webp) {
