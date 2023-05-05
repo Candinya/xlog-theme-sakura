@@ -1,6 +1,6 @@
 {
   "name": "xlog-theme-sakura",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Theme sakura for xLog",
   "main": "index.js",
   "scripts": {
