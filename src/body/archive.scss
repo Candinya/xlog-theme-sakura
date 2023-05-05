@@ -3,7 +3,7 @@
 .xlog-page-archive {
   a[href^="/tag/"] {
     border: 1px solid var(--theme-color-light);
-    box-shadow: 0 1px 4px rgb(0 0 0 / 10%);
+    box-shadow: 0 1px 4px rgb(var(--block-box-shadow) / 10%);
     border-radius: 16px;
     display: inline-block;
     margin: 4px;
@@ -19,4 +19,8 @@
       background-color: var(--theme-color-dim);
     }
   }
+}
+
+html.dark .xlog-page-archive a[href^="/tag/"] {
+  border-color: var(--theme-color-dim);
 }
